@@ -61,19 +61,20 @@ public class APITest {
 		.when()
 			.post("/todo")
 		.then()
-//			.log().all()
+			//.log().all()
 			.statusCode(201)
 			.extract().path("id")
 		;
 		
+		//System.out.println(id);
 		//remover
 		RestAssured.given()
 		.when()
-			.delete("/todo"+id)
+			.delete("/todo/"+id)
 		.then()
 			.statusCode(204)
 		;
+		
 	}
-	
 }
 
